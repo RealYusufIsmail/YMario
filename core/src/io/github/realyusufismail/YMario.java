@@ -1,4 +1,4 @@
-package io.github.realyusuf;
+package io.github.realyusufismail;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.Texture;

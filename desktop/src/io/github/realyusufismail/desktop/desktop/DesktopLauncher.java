@@ -1,8 +1,8 @@
-package io.github.realyusuf.desktop;
+package io.github.realyusufismail.desktop.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import io.github.realyusuf.YMario;
+import io.github.realyusufismail.YMario;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {

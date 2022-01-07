@@ -1,8 +1,8 @@
-sourceCompatibility = 16
+sourceCompatibility = 11
 sourceSets.main.java.srcDirs = [ "src/" ]
 sourceSets.main.resources.srcDirs = ["../android/assets"]
 
-project.ext.mainClassName = "io.github.realyusuf.desktop.DesktopLauncher"
+project.ext.mainClassName = "io.github.realyusufismail.desktop.DesktopLauncher"
 project.ext.assetsDir = new File("../android/assets")
 
 task run(dependsOn: classes, type: JavaExec) {
