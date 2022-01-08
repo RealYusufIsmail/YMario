@@ -18,7 +18,7 @@ android {
     }
     defaultConfig {
         applicationId "io.github.realyusufismail"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 32
         versionCode 1
         versionName "1.0"
@@ -86,7 +86,7 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'io.github.realyusuf/io.github.realyusuf.AndroidLauncher'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'io.github.realyusufismail/io.github.realyusufismail.AndroidLauncher'
 }
 
 eclipse.project.name = appName + "-android"

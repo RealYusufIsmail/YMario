@@ -1,4 +1,4 @@
-package io.github.realyusufismail.desktop.desktop;
+package io.github.realyusufismail.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
