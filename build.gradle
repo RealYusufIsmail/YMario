@@ -129,6 +129,7 @@ project(":core") {
         implementation group: 'io.github.yusufsdiscordbot', name: 'annotations', version: '1.0.8'
         //JDA annotations
         implementation group: 'org.jetbrains', name: 'annotations', version: '23.0.0'
+        implementation group: 'com.google.android', name: 'annotations', version: '4.1.1.4'
     }
 
     compileJava {
