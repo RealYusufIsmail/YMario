@@ -54,7 +54,6 @@ project(":desktop") {
         api "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         api "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
-        implementation group: 'io.github.yusufsdiscordbot', name: 'annotations', version: '1.0.8'
         //JDA annotations
         implementation group: 'org.jetbrains', name: 'annotations', version: '23.0.0'
     }
@@ -95,7 +94,6 @@ project(":android") {
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86_64"
-        implementation group: 'io.github.yusufsdiscordbot', name: 'annotations', version: '1.0.8'
         //JDA annotations
         implementation group: 'org.jetbrains', name: 'annotations', version: '23.0.0'
     }
@@ -126,7 +124,6 @@ project(":core") {
     dependencies {
         api "com.badlogicgames.gdx:gdx:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
-        implementation group: 'io.github.yusufsdiscordbot', name: 'annotations', version: '1.0.8'
         //JDA annotations
         implementation group: 'org.jetbrains', name: 'annotations', version: '23.0.0'
         implementation group: 'com.google.android', name: 'annotations', version: '4.1.1.4'

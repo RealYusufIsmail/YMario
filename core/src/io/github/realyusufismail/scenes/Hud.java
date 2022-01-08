@@ -11,6 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import io.github.realyusufismail.YMario;
+import org.jetbrains.annotations.NotNull;
 
 public class Hud {
     public Stage stage;
@@ -28,7 +29,7 @@ public class Hud {
     Label marioLabel;
 
     @SuppressLint("DefaultLocale")
-    public Hud(SpriteBatch sb) {
+    public Hud(@NotNull SpriteBatch sb) {
         worldTimer = 300;
         timeCount = 0;
         score = 0;
