@@ -11,6 +11,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import io.github.realyusufismail.YMario;
 import io.github.realyusufismail.scenes.Hud;
+import org.jetbrains.annotations.NotNull;
 
 public class PlayScreen implements Screen {
     private final YMario game;
@@ -18,7 +19,7 @@ public class PlayScreen implements Screen {
     private final Viewport gamePort;
     private Hud hud;
 
-    public PlayScreen(YMario game) {
+    public PlayScreen(@NotNull YMario game) {
         this.game = game;
         gameCamera = new OrthographicCamera();
         gamePort = new FitViewport(YMario.V_WIDTH, YMario.V_HEIGHT, gameCamera);
@@ -40,7 +41,7 @@ public class PlayScreen implements Screen {
      */
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(1, 0, 0, 1);
+        Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
         hud.stage.draw();
