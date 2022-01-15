@@ -8,7 +8,6 @@ import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
@@ -29,12 +28,12 @@ public class PlayScreen implements Screen {
     private TmxMapLoader mapLoader;
     private TiledMap map;
     private OrthogonalTiledMapRenderer renderer;
-    
-    //Box2d Constructor
+
+    // Box2d Constructor
     private World world;
     private Box2DDebugRenderer b2dr;
 
-    //sprites
+    // sprites
     private Mario player;
 
     public PlayScreen(@NotNull YMario game) {
@@ -42,7 +41,8 @@ public class PlayScreen implements Screen {
         // create camera
         gameCamera = new OrthographicCamera();
         // create viewport
-        gamePort = new FitViewport(YMario.V_WIDTH / YMario.PPM, YMario.V_HEIGHT / YMario.PPM, gameCamera);
+        gamePort = new FitViewport(YMario.V_WIDTH / YMario.PPM, YMario.V_HEIGHT / YMario.PPM,
+                gameCamera);
         // create HUD
         hud = new Hud(game.batch);
         // create map
@@ -50,66 +50,84 @@ public class PlayScreen implements Screen {
         // load map
         map = mapLoader.load("level1.tmx");
         // create renderer
-        renderer = new OrthogonalTiledMapRenderer(map, 1/ YMario.PPM);
-        //sets up our game camera
+        renderer = new OrthogonalTiledMapRenderer(map, 1 / YMario.PPM);
+        // sets up our game camera
         gameCamera.position.set(gamePort.getWorldWidth() / 2, gamePort.getWorldHeight() / 2, 0);
         // create Box2D world
         world = new World(new Vector2(0, -10), true);
         b2dr = new Box2DDebugRenderer();
 
-        BodyDef bdef  = new BodyDef();
+        BodyDef bdef = new BodyDef();
         PolygonShape shape = new PolygonShape();
-        FixtureDef fdef  = new FixtureDef();
+        FixtureDef fdef = new FixtureDef();
         Body body;
 
-        for(MapObject object : map.getLayers().get(2).getObjects().getByType(RectangleMapObject.class)) {
+        for (MapObject object : map.getLayers()
+            .get(2)
+            .getObjects()
+            .getByType(RectangleMapObject.class)) {
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
             bdef.type = BodyDef.BodyType.StaticBody;
-            bdef.position.set((rect.getX() + rect.getWidth() / 2) / YMario.PPM, (rect.getY() + rect.getHeight() / 2) / YMario.PPM);
+            bdef.position.set((rect.getX() + rect.getWidth() / 2) / YMario.PPM,
+                    (rect.getY() + rect.getHeight() / 2) / YMario.PPM);
 
             body = world.createBody(bdef);
 
-            shape.setAsBox(rect.getWidth() / 2, rect.getHeight() / 2);
+            shape.setAsBox(rect.getWidth() / 2 / YMario.PPM, rect.getHeight() / 2 / YMario.PPM);
             fdef.shape = shape;
             body.createFixture(fdef);
         }
 
-        for(MapObject object : map.getLayers().get(3).getObjects().getByType(RectangleMapObject.class)) {
+        for (MapObject object : map.getLayers()
+            .get(3)
+            .getObjects()
+            .getByType(RectangleMapObject.class)) {
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
             bdef.type = BodyDef.BodyType.StaticBody;
-            bdef.position.set((rect.getX() + rect.getWidth() / 2) / YMario.PPM, (rect.getY() + rect.getHeight() / 2) / YMario.PPM);
+            bdef.position.set((rect.getX() + rect.getWidth() / 2) / YMario.PPM,
+                    (rect.getY() + rect.getHeight() / 2) / YMario.PPM);
 
             body = world.createBody(bdef);
 
-            shape.setAsBox(rect.getWidth() / 2, rect.getHeight() / 2);
+            shape.setAsBox(rect.getWidth() / 2 / YMario.PPM, rect.getHeight() / 2 / YMario.PPM);
             fdef.shape = shape;
             body.createFixture(fdef);
         }
 
-        for(MapObject object : map.getLayers().get(5).getObjects().getByType(RectangleMapObject.class)) {
+        for (MapObject object : map.getLayers()
+            .get(5)
+            .getObjects()
+            .getByType(RectangleMapObject.class)) {
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
             bdef.type = BodyDef.BodyType.StaticBody;
-            bdef.position.set((rect.getX() + rect.getWidth() / 2) / YMario.PPM, (rect.getY() + rect.getHeight() / 2) / YMario.PPM);
+            bdef.position.set((rect.getX() + rect.getWidth() / 2) / YMario.PPM,
+                    (rect.getY() + rect.getHeight() / 2) / YMario.PPM);
 
             body = world.createBody(bdef);
 
-            shape.setAsBox(rect.getWidth() / 2, rect.getHeight() / 2);
+            shape.setAsBox(rect.getWidth() / 2 / YMario.PPM, rect.getHeight() / 2 / YMario.PPM);
             fdef.shape = shape;
             body.createFixture(fdef);
         }
 
-        //coins
-        for(MapObject object : map.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)) {
+        // coins
+        for (MapObject object : map.getLayers()
+            .get(4)
+            .getObjects()
+            .getByType(RectangleMapObject.class)) {
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
             bdef.type = BodyDef.BodyType.StaticBody;
-            bdef.position.set((rect.getX() + rect.getWidth() / 2) / YMario.PPM, (rect.getY() + rect.getHeight() / 2) / YMario.PPM);
+            bdef.position.set((rect.getX() + rect.getWidth() / 2) / YMario.PPM,
+                    (rect.getY() + rect.getHeight() / 2) / YMario.PPM);
 
             body = world.createBody(bdef);
 
-            shape.setAsBox(rect.getWidth() / 2, rect.getHeight() / 2);
+            shape.setAsBox(rect.getWidth() / 2 / YMario.PPM, rect.getHeight() / 2 / YMario.PPM);
             fdef.shape = shape;
             body.createFixture(fdef);
         }
+
+        player = new Mario(world);
     }
 
     /**
@@ -121,16 +139,21 @@ public class PlayScreen implements Screen {
     }
 
     private void handleInput(float deltaTime) {
-       if(Gdx.input.isKeyPressed(Input.Keys.W)) {
-            player.b2Body.applyLinearImpulse(new Vector2(0, 4f), player.b2Body.getWorldCenter(), true);
-       } else if(Gdx.input.isKeyPressed(Input.Keys.D) && player.b2Body.getLinearVelocity().x <= 2) {
-
-       }
+        if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE))
+            player.b2Body.applyLinearImpulse(new Vector2(0, 4f), player.b2Body.getWorldCenter(),
+                    true);
+        if (Gdx.input.isKeyPressed(Input.Keys.D) && player.b2Body.getLinearVelocity().x <= 2)
+            player.b2Body.applyLinearImpulse(new Vector2(0.1f, 0), player.b2Body.getWorldCenter(),
+                    true);
+        if (Gdx.input.isKeyPressed(Input.Keys.A) && player.b2Body.getLinearVelocity().x >= -2)
+            player.b2Body.applyLinearImpulse(new Vector2(-0.1f, 0), player.b2Body.getWorldCenter(),
+                    true);
     }
 
     public void update(float deltaTime) {
         handleInput(deltaTime);
         world.step(1 / 60f, 6, 2);
+        gameCamera.position.x = player.b2Body.getPosition().x;
         gameCamera.update();
         renderer.setView(gameCamera);
     }

@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class Hud {
     public Stage stage;
-    private Viewport viewport;
+    public Viewport viewport;
 
     private Integer worldTimer;
     private float timeCount;
