@@ -8,12 +8,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import io.github.realyusufismail.YMario;
 import org.jetbrains.annotations.NotNull;
 
-public class Hud {
+public class Hud implements Disposable {
     public Stage stage;
     public Viewport viewport;
 
@@ -59,5 +60,13 @@ public class Hud {
         table.add(countDownLabel).expandX();
 
         stage.addActor(table);
+    }
+
+    /**
+     * Releases all resources of this object.
+     */
+    @Override
+    public void dispose() {
+        stage.dispose();
     }
 }

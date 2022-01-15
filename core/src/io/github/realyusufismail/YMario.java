@@ -1,7 +1,6 @@
 package io.github.realyusufismail;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import io.github.realyusufismail.screens.PlayScreen;
 
