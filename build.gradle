@@ -55,7 +55,7 @@ project(":desktop") {
         api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         api "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
         //JDA annotations
-        implementation group: 'org.jetbrains', name: 'annotations', version: '23.0.0'
+        implementation group: 'org.jetbrains', name: 'annotations', version: '24.0.0'
     }
 
     compileJava {
@@ -95,7 +95,7 @@ project(":android") {
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86_64"
         //JDA annotations
-        implementation group: 'org.jetbrains', name: 'annotations', version: '23.0.0'
+        implementation group: 'org.jetbrains', name: 'annotations', version: '24.0.0'
     }
 
 
@@ -125,7 +125,7 @@ project(":core") {
         api "com.badlogicgames.gdx:gdx:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         //JDA annotations
-        implementation group: 'org.jetbrains', name: 'annotations', version: '23.0.0'
+        implementation group: 'org.jetbrains', name: 'annotations', version: '24.0.0'
         implementation group: 'com.google.android', name: 'annotations', version: '4.1.1.4'
     }
 
